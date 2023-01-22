@@ -1,12 +1,14 @@
+import { Header } from './Header';
 import { Navbar } from './Navbar';
+import { ScoreBoard } from './ScoreBoard';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Navbar></Navbar>
-      </header>
-    </div>
+    <>
+      <Navbar></Navbar>
+      {/* <Header heading="Welcome" text="This is paragraph."></Header> */}
+      <ScoreBoard></ScoreBoard>
+    </>
   );
 }
 
