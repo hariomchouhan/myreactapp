@@ -29,7 +29,7 @@ export function ScoreBoard() {
 //     handlePlusClick = ()=>{
 //         this.setState({score:this.state.score+4});
 //     }
-//     handelMinusClick = ()=>{
+//     handleMinusClick = ()=>{
 //         this.setState({score:this.state.score-1});
 //     }
 //     render(){
@@ -37,7 +37,7 @@ export function ScoreBoard() {
 //             <>
 //                 <h1>{this.state.score}</h1>
 //                 <input type="button" value="+" onClick={this.handlePlusClick} />
-//                 <input type="button" value="-" onClick={this.handelMinusClick} />
+//                 <input type="button" value="-" onClick={this.handleMinusClick} />
 //             </>
 //         );
 //     }

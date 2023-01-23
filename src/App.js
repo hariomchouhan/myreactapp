@@ -3,6 +3,9 @@ import { Navbar } from './Navbar';
 import { RegistrationForm } from './RegistrationForm';
 import { ScoreBoard } from './ScoreBoard';
 import { SignupForm } from './SignupForm';
+import { UsersData } from './UsersData';
+import { UsersList } from './UsersList';
+import { UsersTable } from './UsersTable';
 
 function App() {
   return (
@@ -11,7 +14,10 @@ function App() {
       {/* <Header heading="Welcome" text="This is paragraph."></Header> */}
       {/* <ScoreBoard></ScoreBoard> */}
       {/* <SignupForm></SignupForm> */}
-      <RegistrationForm></RegistrationForm>
+      {/* <RegistrationForm></RegistrationForm> */}
+      {/* <UsersList></UsersList> */}
+      {/* <UsersData></UsersData> */}
+      <UsersTable></UsersTable>
     </>
   );
 }
