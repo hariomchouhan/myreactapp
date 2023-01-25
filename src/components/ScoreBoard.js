@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Col, Container, Row } from "react-bootstrap";
 
 export function ScoreBoard() {
     const [score, setScore]=useState(0);
@@ -10,9 +11,27 @@ export function ScoreBoard() {
     }
     return(
         <>
+            <Container className="mx-5 text-center">
             <h1>{score}</h1>
-            <input type="button" value="+" onClick={handlePlusClick} />
-            <input type="button" value="-" onClick={handleMinusClick} />
+            <input type="button" className="btn btn-success mx-3" value="+" onClick={handlePlusClick} />
+            <input type="button" className="btn btn-danger" value="-" onClick={handleMinusClick} />
+            </Container>
+            <Container>
+                <Row>
+                    <Col lg={4}>
+                        <h2>This is heading</h2>
+                        <p>This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para.  This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. </p>
+                    </Col>
+                    <Col lg={4}>
+                        <h2>This is heading</h2>
+                        <p>This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para.  This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. </p>
+                    </Col>
+                    <Col lg={4}>
+                        <h2>This is heading</h2>
+                        <p>This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para.  This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. </p>
+                    </Col>
+                </Row>
+            </Container>
         </>
     );
 }
