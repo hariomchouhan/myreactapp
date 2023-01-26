@@ -1,7 +1,11 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 export function RegistrationForm() {
     const [formData, setFormData]=useState({});
+    const score = useSelector((state)=>{
+        return state.ScoreReducer;
+    });
     const handleChange=(e)=>{
         setFormData({...formData, [e.target.name]: e.target.value});
     }
@@ -11,7 +15,7 @@ export function RegistrationForm() {
     }
     return(
         <>
-            <h1>Sign Up</h1>
+            <h1>Sign Up {score}</h1>
                 <form onSubmit={handleSubmit}>
                     <input name="name" type="text" placeholder="Enter Name" onChange={handleChange} />
                     <br /><br />

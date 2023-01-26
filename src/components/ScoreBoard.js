@@ -1,40 +1,64 @@
-import { useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { decrementAction, increamentAction } from "../actions/ScoreActions";
 
 export function ScoreBoard() {
-    const [score, setScore]=useState(0);
+    const score = useSelector((state)=>{
+        return state.ScoreReducer;
+    });
+    const dispatch = useDispatch()
     const handlePlusClick=()=>{
-        setScore(score+4);
+        dispatch(increamentAction());
     }
     const handleMinusClick=()=>{
-        setScore(score-1);
+        dispatch(decrementAction());
     }
     return(
         <>
-            <Container className="mx-5 text-center">
             <h1>{score}</h1>
-            <input type="button" className="btn btn-success mx-3" value="+" onClick={handlePlusClick} />
-            <input type="button" className="btn btn-danger" value="-" onClick={handleMinusClick} />
-            </Container>
-            <Container>
-                <Row>
-                    <Col lg={4}>
-                        <h2>This is heading</h2>
-                        <p>This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para.  This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. </p>
-                    </Col>
-                    <Col lg={4}>
-                        <h2>This is heading</h2>
-                        <p>This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para.  This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. </p>
-                    </Col>
-                    <Col lg={4}>
-                        <h2>This is heading</h2>
-                        <p>This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para.  This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. </p>
-                    </Col>
-                </Row>
-            </Container>
+            <button onClick={handlePlusClick}>+</button>
+            <button onClick={handleMinusClick}>-</button>
         </>
     );
 }
+
+
+// import { useState } from "react";
+// import { Col, Container, Row } from "react-bootstrap";
+
+// export function ScoreBoard() {
+//     const [score, setScore]=useState(0);
+//     const handlePlusClick=()=>{
+//         setScore(score+4);
+//     }
+//     const handleMinusClick=()=>{
+//         setScore(score-1);
+//     }
+//     return(
+//         <>
+//             <Container className="mx-5 text-center">
+//             <h1>{score}</h1>
+//             <input type="button" className="btn btn-success mx-3" value="+" onClick={handlePlusClick} />
+//             <input type="button" className="btn btn-danger" value="-" onClick={handleMinusClick} />
+//             </Container>
+//             <Container>
+//                 <Row>
+//                     <Col lg={4}>
+//                         <h2>This is heading</h2>
+//                         <p>This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para.  This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. </p>
+//                     </Col>
+//                     <Col lg={4}>
+//                         <h2>This is heading</h2>
+//                         <p>This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para.  This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. </p>
+//                     </Col>
+//                     <Col lg={4}>
+//                         <h2>This is heading</h2>
+//                         <p>This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para.  This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. This is dummy para. </p>
+//                     </Col>
+//                 </Row>
+//             </Container>
+//         </>
+//     );
+// }
 
 // import { Component } from "react";
 
